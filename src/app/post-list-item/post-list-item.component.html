@@ -1,0 +1,16 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': a_post.loveIts > 0,
+                'list-group-item-danger':  a_post.loveIts < 0}">
+   
+    <div class="prj-title">
+    	<h3 class="prj-subtitle">{{a_post.title}}</h3> 
+    	<div class="prj-date-topright">{{a_post.created_at | date: 'short'}}</div>
+		<p>{{a_post.content}}</p>
+
+    	<div id="prj-button-bar">
+    		<button type="button" class="btn btn-success" (click)="onLoveIt()">Love it!</button>
+    		<button type="button" class="btn btn-danger" (click)="onDontLoveIt()">Don't love it!</button>
+    	</div>
+    </div>	
+</li>
+
